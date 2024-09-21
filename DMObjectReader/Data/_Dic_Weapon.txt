@@ -1,0 +1,14 @@
+﻿Arrow
+Dagger
+Axe
+LightningBolt
+Slayer
+StoneClub
+Club
+PoisonDart
+Sword
+ThrowingStar
+Fireball
+Antimaterial
+PoisonBlob
+Poison

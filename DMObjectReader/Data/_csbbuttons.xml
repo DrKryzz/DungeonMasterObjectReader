@@ -1,0 +1,1035 @@
+<!-- 
+080, 124, 125, 145, 077, 078 items identification are made by Adamo, thanks!
+http://www.dungeon-master.com/forum/viewtopic.php?p=91902#91902
+  -->
+<csbbuttons>
+  <button number="001">
+    <name>Top left dialog button</name>
+    <desc>line1
+line2
+line3</desc>
+    <samplepic>btnEdtDlg4Btn.png</samplepic>
+  </button>
+  <button number="002">
+    <name>Top right dialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg4Btn.png</samplepic>
+  </button>
+  <button number="003">
+    <name>Lower left dialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg4Btn.png</samplepic>
+  </button>
+  <button number="004">
+    <name>Lower right dialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg4Btn.png</samplepic>
+  </button>
+  <button number="005">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg4Btn.png</samplepic>
+  </button>
+  <button number="006">
+    <name>Top dialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg4Btn.png</samplepic>
+  </button>
+  <button number="007">
+    <name>Lower left dialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg4Btn.png</samplepic>
+  </button>
+  <button number="008">
+    <name>Lower right dialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg4Btn.png</samplepic>
+  </button>
+  <button number="009">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg4Btn.png</samplepic>
+  </button>
+  <button number="010">
+    <name>Top dialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg2Btn.png</samplepic>
+  </button>
+  <button number="011">
+    <name>Bottom dialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg2Btn.png</samplepic>
+  </button>
+  <button number="012">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg2Btn.png</samplepic>
+  </button>
+  <button number="013">
+    <name>Bottom dialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg2Btn.png</samplepic>
+  </button>
+  <button number="014">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg2Btn.png</samplepic>
+  </button>
+  <button number="015">
+    <name>Top left minidialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg3Btn(SaveGame).png</samplepic>
+  </button>
+  <button number="016">
+    <name>Top right minidialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg3Btn(SaveGame).png</samplepic>
+  </button>
+  <button number="017">
+    <name>Lower left minidialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg3Btn(SaveGame).png</samplepic>
+  </button>
+  <button number="018">
+    <name>Lower right minidialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg3Btn(SaveGame).png</samplepic>
+  </button>
+  <button number="019">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg3Btn(SaveGame).png</samplepic>
+  </button>
+  <button number="020">
+    <name>Top minidialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg3Btn(SaveGame).png</samplepic>
+  </button>
+  <button number="021">
+    <name>Lower left minidialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg3Btn(SaveGame).png</samplepic>
+  </button>
+  <button number="022">
+    <name>Lower right minidialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg3Btn(SaveGame).png</samplepic>
+  </button>
+  <button number="023">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg3Btn(SaveGame).png</samplepic>
+  </button>
+  <button number="024">
+    <name>Top minidialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg3Btn(SaveGame).png</samplepic>
+  </button>
+  <button number="025">
+    <name>Bottom minidialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg3Btn(SaveGame).png</samplepic>
+  </button>
+  <button number="026">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg3Btn(SaveGame).png</samplepic>
+  </button>
+  <button number="027">
+    <name>Bottom minidialog button</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg3Btn(SaveGame).png</samplepic>
+  </button>
+  <button number="028">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtDlg3Btn(SaveGame).png</samplepic>
+  </button>
+  <button number="029">
+    <name>Ressurect hero button</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="030">
+    <name>Reincarnate hero button</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="031">
+    <name>Cancel hero button</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="032">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="033">
+    <name>Chest item 1</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="034">
+    <name>Chest item 2</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="035">
+    <name>Chest item 3</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="036">
+    <name>Chest item 4</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="037">
+    <name>Chest item 5</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="038">
+    <name>Chest item 6</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="039">
+    <name>Chest item 7</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="040">
+    <name>Chest item 8</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="041">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="042">
+    <name>Player 1 name</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="043">
+    <name>Player 2 name</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="044">
+    <name>Player 3 name</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="045">
+    <name>Player 4 name</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="046">
+    <name>Player 1 left hand</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="047">
+    <name>Player 1 right hand</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="048">
+    <name>Player 2 left hand</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="049">
+    <name>Player 2 right hand</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="050">
+    <name>Player 3 left hand</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="051">
+    <name>Player 3 right hand</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="052">
+    <name>Player 4 left hand</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="053">
+    <name>Player 4 right hand</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="054">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="055">
+    <name>Spell rune 1</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="056">
+    <name>Spell rune 2</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="057">
+    <name>Spell rune 3</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="058">
+    <name>Spell rune 4</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="059">
+    <name>Spell rune 5</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="060">
+    <name>Spell rune 6</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="061">
+    <name>Cast spell</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="062">
+    <name>Delete rune</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="063">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="064">
+    <name>Player 1 attack</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="065">
+    <name>Player 2 attack</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="066">
+    <name>Player 3 attack</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="067">
+    <name>Player 4 attack</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="068">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="069">
+    <name>Cancel attack</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="070">
+    <name>Attack 1</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="071">
+    <name>Attack 2</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="072">
+    <name>Attack 3</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="073">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="074">
+    <name>?? full screen</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="075">
+    <name>?? full screen</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="076">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="077">
+    <name>waking up by LMB</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="078">
+    <name>waking up by RMB</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="079">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="080">
+    <name>RMB changes an inventory mode to a game mode</name>
+    <desc>(works exactly like LMB on 083 cancel button).</desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="081">
+    <name>Inv Save button</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="082">
+    <name>Inv Sleep</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="083">
+    <name>Inv cancel</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="084">
+    <name>Inv left hand</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="085">
+    <name>Inv right hand</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="086">
+    <name>Inv head</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="087">
+    <name>Inv chest</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="088">
+    <name>Inv legs</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="089">
+    <name>Inv feet</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="090">
+    <name>Inv pouch 2</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="091">
+    <name>Inv Mouth</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="092">
+    <name>Inv eye</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="093">
+    <name>Inv quiver 2,1</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="094">
+    <name>Inv quiver 1,2</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="095">
+    <name>Inv quiver 2,2</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="096">
+    <name>Inv necklace</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="097">
+    <name>Inv pouch 1</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="098">
+    <name>Inv quiver 1,1</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="099">
+    <name>Inv backpack 1,1</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="100">
+    <name>Inv backpack 2,2</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="101">
+    <name>Inv backpack 2,3</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="102">
+    <name>Inv backpack 2,4</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="103">
+    <name>Inv backpack 2,5</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="104">
+    <name>Inv backpack 2,6</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="105">
+    <name>Inv backpack 2,7</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="106">
+    <name>Inv backpack 2,8</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="107">
+    <name>Inv backpack 2,9</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="108">
+    <name>Inv backpack 1,2</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="109">
+    <name>Inv backpack 1,3</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="110">
+    <name>Inv backpack 1,4</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="111">
+    <name>Inv backpack 1,5</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="112">
+    <name>Inv backpack 1,6</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="113">
+    <name>Inv backpack 1,7</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="114">
+    <name>Inv backpack 1,8</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="115">
+    <name>Inv backpack 1,9</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="116">
+    <name>Inv lower right box ??</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="117">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="118">
+    <name>Move turn left</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="119">
+    <name>Move forward</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="120">
+    <name>Move turn right</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="121">
+    <name>Move left</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="122">
+    <name>Move back</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="123">
+    <name>Move right</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="124">
+    <name>Below y1=33 clickable wallitem stuff area for LMB.</name>
+    <desc>(like switches, door buttons, etc) </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="125">
+    <name>RMB changes an inventory mode to a game mode</name>
+    <desc>(above y1=33 it works anyway).</desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="126">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="127">
+    <name>Player 1 face</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="128">
+    <name>Player 2 face</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="129">
+    <name>Player 3 face</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="130">
+    <name>Player 4 face</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="131">
+    <name>Top left player</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="132">
+    <name>Top right player</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="133">
+    <name>Lower right player</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="134">
+    <name>Lower left player</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="135">
+    <name>Player 1 section</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="136">
+    <name>Player 2 section</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="137">
+    <name>Player 3 section</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="138">
+    <name>Player 4 section</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="139">
+    <name>Player 1 bars</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="140">
+    <name>Player 2 bars</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="141">
+    <name>Player 3 bars</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="142">
+    <name>Player 4 bars</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="143">
+    <name>Spell area</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="144">
+    <name>Attack area</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="145">
+    <name>LMB freezes the game</name>
+    <desc>(so works exactly like "ESCAPE" switch).</desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="146">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="147">
+    <name>?? inventory status bottom</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="148">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>
+    </samplepic>
+  </button>
+  <button number="149">
+    <name>Entrance enter dungeon</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtEntrance.png</samplepic>
+  </button>
+  <button number="150">
+    <name>Entrance resume</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtEntrance.png</samplepic>
+  </button>
+  <button number="151">
+    <name>Entrance credits</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtEntrance.png</samplepic>
+  </button>
+  <button number="152">
+    <name>Unused</name>
+    <desc>
+    </desc>
+    <samplepic>btnEdtEntrance.png</samplepic>
+  </button>
+</csbbuttons>

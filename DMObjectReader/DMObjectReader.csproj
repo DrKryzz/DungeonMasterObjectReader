@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C235FD8-A96C-424E-9F4E-A66D947013D4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DMObjectReader</RootNamespace>
+    <AssemblyName>DMObjectReader</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="CodeIdid\OldMainWindows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeIdid\OldMainWindows.Designer.cs">
+      <DependentUpon>OldMainWindows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTOs\animationinfo.cs" />
+    <Compile Include="DTOs\armor.cs" />
+    <Compile Include="DTOs\attack.cs" />
+    <Compile Include="DTOs\combo.cs" />
+    <Compile Include="DTOs\csbButton.cs" />
+    <Compile Include="DTOs\decorationinfo.cs" />
+    <Compile Include="DTOs\drawlocgroup.cs" />
+    <Compile Include="DTOs\graphicdirect.cs" />
+    <Compile Include="DTOs\itemgraphicinfo.cs" />
+    <Compile Include="DTOs\missilegraphicinfo.cs" />
+    <Compile Include="DTOs\monster.cs" />
+    <Compile Include="DTOs\monsterdrop.cs" />
+    <Compile Include="DTOs\monstergraphicinfo.cs" />
+    <Compile Include="DTOs\obj.cs" />
+    <Compile Include="DTOs\spell.cs" />
+    <Compile Include="DTOs\Tdoor.cs" />
+    <Compile Include="DTOs\weapon.cs" />
+    <Compile Include="Helpers\CSBinaryReader.cs" />
+    <Compile Include="DTOs\file556.cs" />
+    <Compile Include="DTOs\file558.cs" />
+    <Compile Include="DTOs\file559.cs" />
+    <Compile Include="DTOs\file560.cs" />
+    <Compile Include="DTOs\file561.cs" />
+    <Compile Include="DTOs\file562.cs" />
+    <Compile Include="Helpers\CSBinaryWriter.cs" />
+    <Compile Include="Helpers\DataSND.cs" />
+    <Compile Include="Helpers\DataSND1.cs" />
+    <Compile Include="Helpers\ICONDISPLAY.cs" />
+    <Compile Include="Helpers\MyUt.cs" />
+    <Compile Include="Helpers\PALETTE.cs" />
+    <Compile Include="Helpers\SOUND.cs" />
+    <Compile Include="Helpers\Tmapfile.cs" />
+    <Compile Include="Helpers\MyWordClrUt.cs" />
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiscClasses\BITMAPINFOHEADER.cs" />
+    <Compile Include="MiscClasses\BITMAPINFO_256.cs" />
+    <Compile Include="MiscClasses\RGBQUAD.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="ProgressWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressWindow.Designer.cs">
+      <DependentUpon>ProgressWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CodeIdid\Uncompress.cs" />
+    <Compile Include="CodeIdid\Utils.cs" />
+    <Compile Include="Helpers\RectPos.cs" />
+    <Compile Include="Tgraphics.cs" />
+    <EmbeddedResource Include="CodeIdid\OldMainWindows.resx">
+      <DependentUpon>OldMainWindows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressWindow.resx">
+      <DependentUpon>ProgressWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Data\ADGE_file558_uncompressed.dat" />
+    <None Include="Data\ADGE_file559_uncompressed.dat" />
+    <None Include="Data\ADGE_file561_uncompressed.dat" />
+    <None Include="Data\ADGE_file562_uncompressed.dat" />
+    <None Include="Data\dm.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\file556_uncompressed.dat" />
+    <None Include="Data\graphics.dat" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\_BlueGem.png" />
+    <Content Include="Data\_csbbuttons.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\_Dic_Creature.txt" />
+    <Content Include="Data\_Dic_MiscItem.txt" />
+    <Content Include="Data\_Dic_Weapon.txt" />
+    <Content Include="Data\_Emerald.png" />
+    <Content Include="Data\_EyeOfTime.png" />
+    <Content Include="Data\_Topaz.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
