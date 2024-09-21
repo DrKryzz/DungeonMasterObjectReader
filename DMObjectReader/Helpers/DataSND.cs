@@ -7,7 +7,13 @@ using System.Threading.Tasks;
 
 namespace DMObjectReader.Helpers
 {
-        public class DataSND : DataAdapter
+    //dummy class to handle constructor
+    public class MapItem
+    {
+
+    }
+
+    public class DataSND //: DataAdapter
         {
             public int mWAVHeaderWAVFormat = 1;
             public int mWAVHeaderChannel = 1;
@@ -19,7 +25,7 @@ namespace DMObjectReader.Helpers
             public int mBitsPerSample = 8;
 
             public DataSND(MapItem pMapItem, long pSamplesSize, byte[] pSamples, int pBitsPerSample, int pEndianMode)
-                : base(pMapItem, pEndianMode)
+                //: base(pMapItem, pEndianMode)
             {
                 mSamplesSize = pSamplesSize;
                 mSamples = pSamples;
@@ -27,14 +33,23 @@ namespace DMObjectReader.Helpers
                 mSampleRate = GetPropertyAsLong("SPR", mSampleRate);
             }
 
-            public void Export(string pOutputPath)
+
+
+        private long GetPropertyAsLong(string propertyName, long mSampleRate)
+        {
+            //empty implemenation
+            return default;
+        }
+
+        public void Export(string pOutputPath)
             {
                 ToWAV(GetExportFileWAV(pOutputPath));
             }
 
             public FileInfo GetExportFileWAV(string pOutputPath)
             {
-                return GetExportFile(pOutputPath, WAV.FILE_EXTENSION);
+                return new FileInfo(Path.Combine(pOutputPath, "file.wav"));
+                //return GetExportFile(pOutputPath, WAV.FILE_EXTENSION);
             }
 
             public FileInfo[] GetExportFileList(string pOutputPath)

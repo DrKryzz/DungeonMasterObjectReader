@@ -15,6 +15,7 @@ The number of bytes in a "word" depends on the architecture of the system:
 64-bit architecture: A word is 8 bytes (64 bits).
 
 ATARI = 16 bit for a word = 2 bytes
+Nibble = 8 bit = 1 byte
 
 Header
 1 word (big endian): Number of sound samples

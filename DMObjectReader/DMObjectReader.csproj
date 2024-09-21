@@ -12,7 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-	<LangVersion>latest</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -71,6 +71,7 @@
     <Compile Include="DTOs\spell.cs" />
     <Compile Include="DTOs\Tdoor.cs" />
     <Compile Include="DTOs\weapon.cs" />
+    <Compile Include="Helpers\Bytes.cs" />
     <Compile Include="Helpers\CSBinaryReader.cs" />
     <Compile Include="DTOs\file556.cs" />
     <Compile Include="DTOs\file558.cs" />
