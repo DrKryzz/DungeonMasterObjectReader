@@ -13,6 +13,7 @@ namespace DMObjectReader.Helpers
 
     }
 
+    //SCK DataSND
     public class DataSND //: DataAdapter
         {
             public int mWAVHeaderWAVFormat = 1;
@@ -48,7 +49,7 @@ namespace DMObjectReader.Helpers
 
             public FileInfo GetExportFileWAV(string pOutputPath)
             {
-                return new FileInfo(Path.Combine(pOutputPath, "file.wav"));
+                return new FileInfo(Path.Combine(pOutputPath, WAV.FILE_EXTENSION));
                 //return GetExportFile(pOutputPath, WAV.FILE_EXTENSION);
             }
 

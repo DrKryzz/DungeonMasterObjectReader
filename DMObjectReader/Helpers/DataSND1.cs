@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace DMObjectReader.Helpers
 {
-    using System;
-    using System.IO;
+    //SCK DataSND1
     public class DataSND1 : DataSND
     {
         private bool mNibbleTmp = false;

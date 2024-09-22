@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DMObjectReader.Helpers
 {
-    using System;
-    using System.IO;
-    using System.Text;
+    //SCK WAV
     public class WAV
     {
         protected static readonly int WAVHeaderFileDescription_Size = Windows.DWORD_SIZE;

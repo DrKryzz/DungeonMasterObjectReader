@@ -8,7 +8,7 @@ using System.IO;
 namespace DMObjectReader.Helpers
 {
 
-
+    //SCK Windows
     public class Windows
     {
         public const int DWORD_SIZE = 4;

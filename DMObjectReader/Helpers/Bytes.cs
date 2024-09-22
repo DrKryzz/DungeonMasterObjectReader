@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace DMObjectReader.Helpers
 {
+    //SCK Bytes
     public class Bytes
     {
 
