@@ -14,8 +14,9 @@ The number of bytes in a "word" depends on the architecture of the system:
 32-bit architecture: A word is 4 bytes (32 bits).
 64-bit architecture: A word is 8 bytes (64 bits).
 
-ATARI = 16 bit for a word = 2 bytes
-Nibble = 8 bit = 1 byte
+ATARI = 16 bit for a word = 4 Nibble = 2 bytes
+Byte = 8 bit = 2 nibbles
+Nibble = 4 bit = 1/2 byte
 
 Header
 1 word (big endian): Number of sound samples
