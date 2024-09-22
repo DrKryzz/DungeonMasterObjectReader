@@ -4,7 +4,7 @@ Based of ADGE and in some part SCK
 SCK -> http://dmweb.free.fr/?q=node/884
 
 
-DONE: Loading of DM1 files
+DONE: Loading and display of Graphics.dat file
 
 DONE: Possible to extract Image1 files as BMP
 
