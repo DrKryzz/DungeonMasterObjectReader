@@ -419,41 +419,6 @@ namespace DMObjectReader
             CSBWinObjNames[i] = "BONES";
         } //End Sub
 
-
-
-        //min tidigaste
-        //public int GetNextLZWCode(int n)
-        //{
-        //    int GetNextLZWCodeRet = default;
-        //    while (BitsInBuffer < n & LZWByteIndex < itemdata.Length) // If there are enough bits in the buffer to make a code
-        //    {
-        //        itemdata.Position = LZWByteIndex;
-        //        BitBuffer = BitBuffer + itemdata.ReadByte() * (int)Math.Pow(2, BitsInBuffer); // Add the next character to the left of the BitBuffer (hence the shift to the left)
-        //        BitsInBuffer = BitsInBuffer + 8;             // 8 bits were added to the buffer
-        //        LZWByteIndex = LZWByteIndex + 1;             // Go to the next input character
-        //    }
-        //    // MsgBox     "BitsInBuffer: " & BitsInBuffer & vbCrLf & _
-        //    // "n: " & n & vbCrLf & _
-        //    // "LZWByteIndex: " & LZWByteIndex & vbCrLf & _
-        //    // "Len(ItemData): " & Len(ItemData) & vbCrLf & _
-        //    // "BitBuffer: " & BitBuffer
-
-        //    if (BitsInBuffer >= n)               // If there are enough bits in the buffer to make a code
-        //    {
-        //        GetNextLZWCodeRet = BitBuffer & (int)(Math.Pow(2d, n) - 1d);  // Add to the list of codes the code made with the BitsInCode most significant bits in the buffer
-        //        BitBuffer = BitBuffer / (int)(Math.Pow(2d, n));         // Remove the output bits from the buffer by shifting the buffer to the right
-        //        BitsInBuffer = BitsInBuffer - n;     // The number of bits in the buffer is decreased
-        //    }
-        //    else
-        //    {
-        //        GetNextLZWCodeRet = -1;
-        //    }
-
-        //    return GetNextLZWCodeRet;
-        //    // MsgBox "NextLZWCode Is: " & GetNextLZWCode
-        //}
-
-        //ai genererad?
         public int GetNextLZWCode(int n)
         {
             while (BitsInBuffer < n && LZWByteIndex < itemdata.Length) // If there are enough bits in the buffer to make a code

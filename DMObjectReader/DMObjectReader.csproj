@@ -88,6 +88,8 @@
     <Compile Include="Helpers\SOUND.cs" />
     <Compile Include="Helpers\Tmapfile.cs" />
     <Compile Include="Helpers\MyWordClrUt.cs" />
+    <Compile Include="Helpers\WAV.cs" />
+    <Compile Include="Helpers\Windows.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>

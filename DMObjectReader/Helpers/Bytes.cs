@@ -9,6 +9,44 @@ namespace DMObjectReader.Helpers
 {
     public class Bytes
     {
+
+        /*
+        in a byte 00000000 = 8 bits
+        Mask with 0xF0 (11110000): Keeps the upper 4 bits and clears the lower 4 bits.
+        Mask with 0x0F (00001111): Keeps the lower 4 bits and clears the upper 4 bits.
+        Mask with 0xFF (11111111): Keeps all the bits in a byte
+
+        in a word 11111111 11111111 = 16 bits
+        Masking a Word with 0xFF (0x00FF)
+        Hexadecimal 0xFF: In binary, this is 00000000 11111111.
+        Effect on a Word: A word usually consists of 16 bits (2 bytes). 
+        When you mask a 16-bit word with 0xFF, it only keeps the lower 8 bits (the lower byte) and sets the upper 8 bits to zero.
+        result with above would be 00000000 11111111
+
+        Masking a Word with 0xFF00
+        Hexadecimal 0xFF00: In binary, this is 11111111 00000000.
+        Effect on a Word: When you mask a 16-bit word with 0xFF00, you keep the upper 8 bits (the upper byte) and clear the lower 8 bits (the lower byte).
+        result with above would be 11111111 00000000
+
+
+        Left Shift (<<):
+
+        When you left-shift a number, you're effectively multiplying it by 2^𝑛
+        where n is the number of positions you shift.
+        For example:
+        Shifting by 1 (i.e., << 1) multiplies the number by 2.
+        Shifting by 2 (i.e., << 2) multiplies the number by 4.
+        Shifting by 4 (i.e., << 4) multiplies the number by 16
+        Shifting by 8 (i.e., << 8) multiplies the number by 256
+
+        Right Shift (>>):
+        When you right-shift a number, you move the bits to the right, which divides the number by powers of two.
+        For example:
+        Right shifting by 1 (i.e., >> 1) divides the number by 2.
+        Right shifting by 2 (i.e., >> 2) divides the number by 4.
+        Right shifting by 4 (i.e., >> 4) divides the number by 16.
+         */
+
         protected static char[] lHexaString = new char[] {
             '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
             'a', 'b', 'c', 'd', 'e', 'f'
@@ -21,11 +59,27 @@ namespace DMObjectReader.Helpers
         public const bool SIGNED = true;
         public const bool UNSIGNED = false;
 
+        /// <summary>
+        /// A byte is 2 nibbles
+        /// masks the lower 4 bits to zero, keeps the upper 4 bits
+        /// bit-shifts >> 4 the upper 4 bits to the lower part
+        /// and returns as a byte
+        /// 1111 0001 would be masked to 1111 0000 and then shifted to 
+        /// 0000 1111 which is the returned value
+        /// </summary>
+        /// <param name="pByte"></param>
+        /// <returns></returns>
         public static byte GetHighNibble(byte pByte)
         {
             return (byte)((pByte & 0xF0) >> 4);
         }
 
+        /// <summary>
+        /// masks the upper part of a byte and returns the value
+        /// 1111 0001 would be returned as 0000 0001
+        /// </summary>
+        /// <param name="pByte"></param>
+        /// <returns></returns>
         public static byte GetLowNibble(byte pByte)
         {
             return (byte)(pByte & 0xF);
@@ -56,6 +110,8 @@ namespace DMObjectReader.Helpers
         {
             if (pEndianMode == BIG_ENDIAN)
                 return ((b1 & 0xFF) << 24) + ((b2 & 0xFF) << 16) + ((b3 & 0xFF) << 8) + (b4 & 0xFF);
+
+            //little endian
             return ((b4 & 0xFF) << 24) + ((b3 & 0xFF) << 16) + ((b2 & 0xFF) << 8) + (b1 & 0xFF);
         }
 
@@ -64,6 +120,17 @@ namespace DMObjectReader.Helpers
             return BytesToInt(b1, b2, pEndianMode, false);
         }
 
+        /// <summary>
+        /// If the endian mode is set to BIG_ENDIAN:
+        /// Shift the first byte (b1) 8 bits to the left to position it as the high byte.
+        /// Combine it with the second byte (b2) by adding them together.
+        /// Return the combined value as an integer.
+        /// </summary>
+        /// <param name="b1"></param>
+        /// <param name="b2"></param>
+        /// <param name="pEndianMode"></param>
+        /// <param name="pIsSigned"></param>
+        /// <returns></returns>
         public static int BytesToInt(byte b1, byte b2, int pEndianMode, bool pIsSigned)
         {
             if (pEndianMode == BIG_ENDIAN)
