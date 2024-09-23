@@ -72,6 +72,15 @@ namespace DMObjectReader
             f562 = new file562(app);
         }
 
+        public MemoryStream GetItemdata(int num)
+        {
+            MemoryStream stream = new MemoryStream();
+            gitemdatas[num].CopyTo(stream);
+            gitemdatas[num].Position = 0;
+            stream.Position = 0;
+            return stream;
+        }
+
         public void setmirrored(int num)
         {
             if (num == 0)

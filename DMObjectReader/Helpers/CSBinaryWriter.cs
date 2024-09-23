@@ -43,7 +43,7 @@ namespace DMObjectReader.Helpers
         public void WriteSOUND(SOUND v)
         {
 
-            WriteInt16(v.word0);
+            WriteInt16(v.word_header_nrOfSamples);
             WriteByte(v.byte2);
             WriteByte(v.byte3);
             WriteByte(v.byte4);

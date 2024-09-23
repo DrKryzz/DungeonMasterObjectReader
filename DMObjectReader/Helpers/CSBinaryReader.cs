@@ -46,7 +46,7 @@ namespace DMObjectReader.Helpers
         public SOUND ReadSOUND() 
         {
             SOUND ReadSOUND = new SOUND();
-            ReadSOUND.word0 = ReadInt16();
+            ReadSOUND.word_header_nrOfSamples = ReadInt16();
             ReadSOUND.byte2 = ReadByte();
             ReadSOUND.byte3 = ReadByte();
             ReadSOUND.byte4 = ReadByte();

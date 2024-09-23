@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DMObjectReader.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -227,6 +228,44 @@ namespace DMObjectReader
             }
             app.graphics.kkspec_gexport_img1_type2(itemnum, sfile, 0);
 
+        }
+
+        private void ExportSND1_Click(object sender, EventArgs e)
+        {
+            int itemnum;
+
+            itemnum = ItemList.FocusedItem.Index;
+            string sfile = "";
+            using (SaveFileDialog dlg = new SaveFileDialog())
+            {
+                dlg.Title = "Export SND";
+                dlg.OverwritePrompt = true;
+                dlg.Filter = "*.wav|*.wav|All Files (*.*)|*.*||";
+                dlg.FileName = App.CStr(App.ZeroStr(itemnum, 4) + " " + app.mapfile.getname(itemnum) + (".wav"));
+                try
+                {
+
+
+                    if (dlg.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+                    {
+                        return;
+                    }
+
+                    if (App.Len((new System.IO.DirectoryInfo(dlg.FileName)).Name) == 0)
+                    {
+                        return;
+                    }
+                    sfile = dlg.FileName;
+                }
+                catch (Exception ex)
+                {
+
+                }
+
+            }
+            SOUND snd = new SOUND(app.graphics.GetItemdata(itemnum));
+            byte[] arr = snd.GetPCM4BitMono();
+            System.IO.File.WriteAllBytes(sfile, arr);
         }
     }
 }

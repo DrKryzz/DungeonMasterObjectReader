@@ -71,6 +71,10 @@ Playback rate: 6000 Hz.
         public byte byte2, byte3, byte4, byte5, byte6, byte7;
         private MemoryStream itemdata;
 
+        public SOUND()
+        {
+
+        }
         public SOUND(MemoryStream _itemdata)
         {
             itemdata = _itemdata;
@@ -116,6 +120,7 @@ Playback rate: 6000 Hz.
                     for(int j = 0; j < repeatCount; j++)
                     {
                         returns.Add(previousNibble);
+                        i++;
                     }
 
                 }
@@ -134,7 +139,34 @@ Playback rate: 6000 Hz.
         private int GetRepeatCountPlus3(MemoryStream itemdata, ref Queue<byte> nibbles)
         {
             //start reading nibbles and add to list until the we find a nibble where the fourth bit set is 0
-            return 3;
+            // If nibble is 0, we need to decode the RepeatCount
+            int repeatCount = 0;
+            bool continueReading = true;
+            bool isEOS = false;
+
+            // Decode RepeatCount in a loop, reading 3 bits from each nibble
+            while (continueReading && !isEOS)
+            {
+                if (nibbles.Count == 0)
+                {
+                    // Read the next nibbles
+                    var tuple = GetNibbles(itemdata, out isEOS);
+                    nibbles.Enqueue(tuple.upperNibble);
+                    nibbles.Enqueue(tuple.lowerNibble);
+                }
+                byte nibble = nibbles.Dequeue();
+
+                // The most significant bit indicates if we should continue reading
+                continueReading = IsFourthBitSet(nibble); // (nibble & 0x8) != 0;
+
+                // Extract the lower 3 bits and append them to RepeatCount
+                repeatCount = (repeatCount << 3) | (nibble & 0x7);
+            }
+
+            // Minimum repeat count is 3
+            repeatCount += 3;
+
+            return repeatCount;
         }
 
         //no need to pass as a ref, should keep track anyway
