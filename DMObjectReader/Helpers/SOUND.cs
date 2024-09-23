@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,14 +57,129 @@ If Nibble = 0 Then
 The previously read sample has to be repeated a certain number of times called RepeatCount. That number must be 3 at minimum. 
 The value of RepeatCount is encoded in a variable number of nibbles, each of them containing 3 bits of the binary representation of RepeatCount as their least significant bits. 
 The most significant bit is set to 1 in each of these nibbles except in the last nibble used to store the RepeatCount value which is marking the end of the cyle.
-So each time you read a nibble for RepeatCount, you have to shift the bits of RepeatCount by three bits to the left and insert the three less significant bits of the last read nibble to the right until the most significant bit of the last read nibble is 0. You then need to add 3 to RepeatCount and copy the last sample read RepeatCount times.
+So each time you read a nibble for RepeatCount, 
+you have to shift the bits of RepeatCount by three bits to the left and insert the three less significant bits of the last read nibble to the right 
+until the most significant bit of the last read nibble is 0. 
+You then need to add 3 to RepeatCount and copy the last sample read RepeatCount times.
 Repeat that process until there are no more nibbles to read
 
 Note: if you want to convert the sound data to PCM 8 bit sound, you need to multiply each sample value by 2^4 (16).
 
 Playback rate: 6000 Hz.
          */
-        public short word0; //nr of sound samples in this sound
+        public short word_header_nrOfSamples; //nr of sound samples in this sound snd1 = Big Endian
         public byte byte2, byte3, byte4, byte5, byte6, byte7;
+        private MemoryStream itemdata;
+
+        public SOUND(MemoryStream _itemdata)
+        {
+            itemdata = _itemdata;
+        }
+
+        public byte[] GetPCM4BitMono()
+        {
+            itemdata.Position = 0; //reset position
+            List<byte> returns = new List<byte>();
+            word_header_nrOfSamples = (short)ReadBigEndianWord(itemdata);
+            Queue<byte> nibblesQueu = new Queue<byte>();
+            byte previousNibble = 0;
+
+            //for each sample in the sound
+            for(int i = 0; i < word_header_nrOfSamples; i++)
+            {
+                //read nibbles, we always get two nibbles at a time
+
+                if (nibblesQueu.Count == 0) {
+                    var tuple = GetNibbles(itemdata, out bool isEOS);
+                    if (isEOS)
+                        break;
+
+                    nibblesQueu.Enqueue(tuple.upperNibble); //first
+                    nibblesQueu.Enqueue(tuple.lowerNibble); //second
+                }
+                
+                byte nibbleToHandle = nibblesQueu.Dequeue();
+
+                //If Nibble<> 0 Then Sample = Nibble
+                if (nibbleToHandle != 0)
+                {
+                    //add sample to byte array
+                    returns.Add(nibbleToHandle);
+                    previousNibble = nibbleToHandle;
+                }
+                else //Nibble = 0
+                {
+                    //The previously read sample has to be repeated a certain number of times called RepeatCount.
+                    //That number must be 3 at minimum (is added from the method).
+                    int repeatCount = GetRepeatCountPlus3(itemdata, ref nibblesQueu);
+
+                    for(int j = 0; j < repeatCount; j++)
+                    {
+                        returns.Add(previousNibble);
+                    }
+
+                }
+            }
+
+            return returns.ToArray();
+        }
+
+        // Method to check if the fourth bit (bit 3) is set in a nibble, from the least significant bit
+        public static bool IsFourthBitSet(byte nibble)
+        {
+            // Mask the fourth bit (bit 3) using 0x08 (binary 00001000)
+            return (nibble & 0x08) != 0;
+        }
+
+        private int GetRepeatCountPlus3(MemoryStream itemdata, ref Queue<byte> nibbles)
+        {
+            //start reading nibbles and add to list until the we find a nibble where the fourth bit set is 0
+            return 3;
+        }
+
+        //no need to pass as a ref, should keep track anyway
+        private short ReadBigEndianWord(MemoryStream memoryStream)
+        {
+            // Create a buffer to hold the two bytes of the word
+            byte[] buffer = new byte[2];
+
+            // Read 2 bytes from the MemoryStream
+            memoryStream.Read(buffer, 0, 2);
+
+            // Combine the bytes in big-endian order
+            // Shift the first byte (high byte) 8 bits to the left and add the second byte (low byte)
+            short word = (short)((buffer[0] << 8) | buffer[1]);
+
+            return word;
+        }
+
+        private (byte upperNibble, byte lowerNibble) GetNibbles(MemoryStream memoryStream, out bool isEOS)
+        {
+            isEOS = false;
+            byte b = (byte)memoryStream.ReadByte();
+
+            //if -1 then end of stream, if not EOS then get nibbles
+            if (b != -1)
+            { 
+                return GetNibbles(b);
+            }
+
+            //end of stream
+            isEOS = true;
+            return (0, 0);
+        }
+
+        private (byte upperNibble, byte lowerNibble) GetNibbles(byte b)
+        {
+            // Extract the upper nibble (leftmost 4 bits)
+            byte upperNibble = (byte)((b & 0xF0) >> 4);
+
+            // Extract the lower nibble (rightmost 4 bits)
+            byte lowerNibble = (byte)(b & 0x0F);
+
+            // Return the nibbles as a tuple
+            return (upperNibble, lowerNibble);
+        }
+
     }
 }

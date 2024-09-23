@@ -821,9 +821,9 @@ namespace DMObjectReader
             for (i = 5; i <= itemlen; i++)
             {
                 b = sread_byte(gitemdatas[itemnum], i);
-                nibbles[j] = (byte)CShort((b & 0xF0) / 16);
+                nibbles[j] = (byte)((b & 0xF0) >> 4); //high nibble orig = (byte)CShort((b & 0xF0) / 16)
                 j = j + 1;
-                nibbles[j] = (byte)(b & 0xF);
+                nibbles[j] = (byte)(b & 0xF); //low nibble
                 j = j + 1;
             } //end Next
             nibblelen = j - 1;
