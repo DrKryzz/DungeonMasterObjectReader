@@ -10,11 +10,17 @@ namespace DMObjectReader.Helpers
     public class DataSND1 : DataSND
     {
         private bool mNibbleTmp = false;
+        public byte[] itemdata;
 
         public DataSND1(MapItem pMapItem, int pEndianMode) : base(pMapItem, 0, null, mBitsPerSample_8, pEndianMode)
         {
         }
 
+        /// <summary>
+        /// Reads a byte and discards half of it to return a nibble 4 bit, either high or low
+        /// </summary>
+        /// <param name="lByte"></param>
+        /// <returns></returns>
         public byte GetNibble(byte lByte)
         {
             if (!mNibbleTmp)
@@ -33,7 +39,7 @@ namespace DMObjectReader.Helpers
             if (pData.Length <= 0)
                 return false;
 
-            int lSamplesSize = Bytes.BytesToInt(pData[lDataIndex], pData[lDataIndex + 1], Bytes.BIG_ENDIAN);
+            int lSamplesSize = Bytes.BytesToInt(pData[lDataIndex], pData[lDataIndex + 1], Bytes.BIG_ENDIAN); //first word
             lDataIndex += 2;
 
             if (lSamplesSize <= 0) 

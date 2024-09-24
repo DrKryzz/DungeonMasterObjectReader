@@ -63,7 +63,7 @@ until the most significant bit of the last read nibble is 0.
 You then need to add 3 to RepeatCount and copy the last sample read RepeatCount times.
 Repeat that process until there are no more nibbles to read
 
-Note: if you want to convert the sound data to PCM 8 bit sound, you need to multiply each sample value by 2^4 (16).
+Note: if you want to convert the sound data to PCM 8 bit sound, you need to multiply each sample value by 17 --used to be 2^4 (16).
 
 Playback rate: 6000 Hz.
          */
@@ -184,6 +184,8 @@ Playback rate: 6000 Hz.
 
             return word;
         }
+
+        //aparently we only use one nibble per byte (half) the rest we toss
 
         private (byte upperNibble, byte lowerNibble) GetNibbles(MemoryStream memoryStream, out bool isEOS)
         {

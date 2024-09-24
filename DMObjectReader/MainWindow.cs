@@ -265,6 +265,8 @@ namespace DMObjectReader
             }
             SOUND snd = new SOUND(app.graphics.GetItemdata(itemnum));
             byte[] arr = snd.GetPCM4BitMono();
+
+            //we need the header info also
             System.IO.File.WriteAllBytes(sfile, arr);
         }
     }

@@ -31,15 +31,15 @@ namespace DMObjectReader.Helpers
             mSamplesSize = pSamplesSize;
             mSamples = pSamples;
             mBitsPerSample = pBitsPerSample;
-            mSampleRate = GetPropertyAsLong("SPR", mSampleRate);
+            mSampleRate = GetPropertyAsLong("SPR", mSampleRate); //SPR could be sample rate
         }
 
 
-
+        //hangs on the MapItem originally
         private long GetPropertyAsLong(string propertyName, long mSampleRate)
         {
             //empty implemenation
-            return default;
+            return mSampleRate;
         }
 
         public void Export(string pOutputPath)
@@ -60,12 +60,15 @@ namespace DMObjectReader.Helpers
 
         public bool ToWAV(FileInfo pOutputFile)
         {
-            if (mSamples == null) return false;
+            if (mSamples == null) 
+                return false;
             try
             {
                 using (MemoryStream baos = new MemoryStream())
                 {
-                    baos.Write(WAV.GetHeader(mSamplesSize, mSampleRate, mBitsPerSample, mWAVHeaderWAVFormat, mWAVHeaderChannel), 0, WAV.GetHeader(mSamplesSize, mSampleRate, mBitsPerSample, mWAVHeaderWAVFormat, mWAVHeaderChannel).Length);
+                    byte[] headerInfo = WAV.GetHeader(mSamplesSize, mSampleRate, mBitsPerSample, mWAVHeaderWAVFormat, mWAVHeaderChannel);
+                    //baos.Write(WAV.GetHeader(mSamplesSize, mSampleRate, mBitsPerSample, mWAVHeaderWAVFormat, mWAVHeaderChannel), 0, WAV.GetHeader(mSamplesSize, mSampleRate, mBitsPerSample, mWAVHeaderWAVFormat, mWAVHeaderChannel).Length);
+                    baos.Write(headerInfo, 0, headerInfo.Length);
                     baos.Write(mSamples, 0, mSamples.Length);
 
                     using (FileStream fos = new FileStream(pOutputFile.FullName, FileMode.Create, FileAccess.Write))

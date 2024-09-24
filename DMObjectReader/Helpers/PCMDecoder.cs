@@ -11,8 +11,12 @@ namespace DMObjectReader.Helpers
 
     public class PCMDecoder
     {
+
+        // Keep track of whether we're reading the high or low nibble
+        bool readHighNibble = true;
+
         // Method to read a word in big-endian format from a stream
-        private static ushort ReadBigEndianWord(BinaryReader reader)
+        private ushort ReadBigEndianWord(BinaryReader reader)
         {
             // Read two bytes and combine them in big-endian format
             byte highByte = reader.ReadByte();
@@ -21,7 +25,7 @@ namespace DMObjectReader.Helpers
         }
 
         // Method to decode the PCM sound data
-        public static List<byte> DecodePCMData(Stream input)
+        public List<byte> DecodePCMData(Stream input)
         {
             using (BinaryReader reader = new BinaryReader(input))
             {
@@ -51,9 +55,16 @@ namespace DMObjectReader.Helpers
                         // Decode RepeatCount in a loop, reading 3 bits from each nibble
                         while (continueReading)
                         {
-                            // Read the next nibble
-                            nibble = ReadNibble(reader);
-
+                            try
+                            {
+                                // Read the next nibble
+                                nibble = ReadNibble(reader);
+                            }
+                            catch(Exception ex)
+                            {
+                                continueReading = false;
+                                break;
+                            }
                             // The most significant bit indicates if we should continue reading
                             continueReading = (nibble & 0x8) != 0;
 
@@ -77,16 +88,17 @@ namespace DMObjectReader.Helpers
         }
 
         // Method to read a nibble (4 bits) from the stream
-        private static byte ReadNibble(BinaryReader reader)
+        private byte ReadNibble(BinaryReader reader)
         {
             // Read a byte and extract the nibbles alternately
             int byteRead = reader.ReadByte();
-            if (byteRead == -1) throw new EndOfStreamException("End of stream reached.");
+            if (byteRead == -1) 
+                throw new EndOfStreamException("End of stream reached.");
 
-            // Keep track of whether we're reading the high or low nibble
-            bool readHighNibble = true;
+            byte returnbyte = readHighNibble ? (byte)((byteRead & 0xF0) >> 4) : (byte)(byteRead & 0x0F);
+            readHighNibble = !readHighNibble; //switch
 
-            return readHighNibble ? (byte)((byteRead & 0xF0) >> 4) : (byte)(byteRead & 0x0F);
+            return returnbyte;
         }
 
         //public static void Main()
