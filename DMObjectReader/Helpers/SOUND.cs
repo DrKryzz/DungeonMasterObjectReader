@@ -108,8 +108,8 @@ Playback rate: 6000 Hz.
                 if (nibbleToHandle != 0)
                 {
                     //add sample to byte array
-                    returns.Add((byte)(nibbleToHandle * 17)); //make it 8 bit mono instead of 4
-                    previousNibble = nibbleToHandle;
+                    returns.Add((byte)((nibbleToHandle * 17) & 0xF0)); //make it 8 bit mono instead of 4, mask high bits
+                    previousNibble = (byte)((nibbleToHandle * 17) & 0xF0); //make it 8 bit mono instead of 4, mask high bits
                 }
                 else //Nibble = 0
                 {
