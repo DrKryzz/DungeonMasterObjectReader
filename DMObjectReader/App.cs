@@ -829,6 +829,40 @@ namespace DMObjectReader
 
             return result;
         }
+
+        public static T[] Join<T>(this T[]a, T[] b)
+        {
+            int totalLength = a.Length + b.Length;
+            T[] result = new T[totalLength];
+            int currentPosition = 0;
+            Array.Copy(a, 0, result, currentPosition, a.Length);
+            currentPosition += a.Length;
+            Array.Copy(b, 0, result, currentPosition, b.Length);
+
+            return result;
+        }
+
+        //// Method to join multiple arrays using params
+        //public static T[] Join<T>(params T[][] arrays)
+        //{
+        //    // Calculate total length of the resulting array
+        //    int totalLength = arrays.Sum(arr => arr.Length);
+
+        //    // Create a new array with the total length
+        //    T[] result = new T[totalLength];
+
+        //    // Track the current position in the result array
+        //    int currentPosition = 0;
+
+        //    // Copy each array into the result array
+        //    foreach (T[] array in arrays)
+        //    {
+        //        Array.Copy(array, 0, result, currentPosition, array.Length);
+        //        currentPosition += array.Length;
+        //    }
+
+        //    return result;
+        //}
     }
 
     public static class ArrayUt<T> where T : new()

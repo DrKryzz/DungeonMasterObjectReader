@@ -10,10 +10,20 @@ namespace DMObjectReader.Helpers
     public class DataSND1 : DataSND
     {
         private bool mNibbleTmp = false;
-        public byte[] itemdata;
 
         public DataSND1(MapItem pMapItem, int pEndianMode) : base(pMapItem, 0, null, mBitsPerSample_8, pEndianMode)
         {
+        }
+
+
+        public byte[] GetDecodedByteArray()
+        {
+            return mSamples;
+        }
+
+        public long GetDecodedSampleSize()
+        {
+            return mSamplesSize;
         }
 
         /// <summary>
@@ -32,6 +42,11 @@ namespace DMObjectReader.Helpers
             return Bytes.GetLowNibble(lByte);
         }
 
+        /// <summary>
+        /// Decodes the byte[] to playable wav
+        /// </summary>
+        /// <param name="pData"></param>
+        /// <returns></returns>
         public bool Decode(byte[] pData)
         {
             //addOffset(pData.Length);
@@ -58,7 +73,7 @@ namespace DMObjectReader.Helpers
                 {
                     lSamples[lSampleIndex] = (byte)((lNibble * 17) & 0xF0);
                     lSampleIndex++;
-                    lPreviousSample = (byte)((lNibble * 17) & 0xF0);
+                    lPreviousSample = (byte)((lNibble * 17) & 0xF0); //make 8bit instead of 4 bit mono
                 }
                 else
                 {

@@ -236,6 +236,8 @@ namespace DMObjectReader
 
             itemnum = ItemList.FocusedItem.Index;
             string sfile = "";
+            string chatgtp_fil = "";
+            string sck_fil = "";
             using (SaveFileDialog dlg = new SaveFileDialog())
             {
                 dlg.Title = "Export SND";
@@ -256,6 +258,8 @@ namespace DMObjectReader
                         return;
                     }
                     sfile = dlg.FileName;
+                    chatgtp_fil = dlg.FileName + "_chatgtp.wav";
+                    sck_fil = dlg.FileName + "_sck.wav";
                 }
                 catch (Exception ex)
                 {
@@ -263,11 +267,22 @@ namespace DMObjectReader
                 }
 
             }
+
+
+            DataSND1 sND1 = new DataSND1(new MapItem() { }, 1);
+            sND1.Decode(app.graphics.GetItemdata(itemnum).ToArray());
+            sND1.ToWAV(new FileInfo(sck_fil));
+
+            //PCMDecoder decoder = new PCMDecoder();
+            //List<byte> dec = decoder.DecodePCMData(app.graphics.GetItemdata(itemnum));
+            //System.IO.File.WriteAllBytes(chatgtp_fil, dec.ToArray());
+
             SOUND snd = new SOUND(app.graphics.GetItemdata(itemnum));
+            byte[] header = WAV.GetHeader(sND1.GetDecodedSampleSize(), 6000L, 8, 1, 1);
             byte[] arr = snd.GetPCM4BitMono();
 
             //we need the header info also
-            System.IO.File.WriteAllBytes(sfile, arr);
+            System.IO.File.WriteAllBytes(sfile, header.Join(arr));
         }
     }
 }
