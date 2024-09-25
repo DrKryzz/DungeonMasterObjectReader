@@ -68,10 +68,10 @@ namespace DMObjectReader.Helpers
             {
                 byte lNibble = GetNibble(pData[lDataIndex]);
                 lGetNibbleIndex++;
-                if (lGetNibbleIndex % 2 == 0) lDataIndex++;
+                if (lGetNibbleIndex % 2 == 0) lDataIndex++; //there are two nibbles per byte, start with high nibble then low, then get next byte
                 if (lNibble != 0)
                 {
-                    lSamples[lSampleIndex] = (byte)((lNibble * 17) & 0xF0);
+                    lSamples[lSampleIndex] = (byte)((lNibble * 17) & 0xF0);//make 8bit instead of 4 bit mono
                     lSampleIndex++;
                     lPreviousSample = (byte)((lNibble * 17) & 0xF0); //make 8bit instead of 4 bit mono
                 }
@@ -90,6 +90,8 @@ namespace DMObjectReader.Helpers
                         lRepeatCount = (lRepeatCount << 3) | (lNibble & 0x7);
                     } 
                     while ((lNibble & 0x8) != 0);
+
+
                     lRepeatCount += 3;
                     for (int i = 0; i < lRepeatCount; i++)
                     {

@@ -273,13 +273,11 @@ namespace DMObjectReader
             sND1.Decode(app.graphics.GetItemdata(itemnum).ToArray());
             sND1.ToWAV(new FileInfo(sck_fil));
 
-            //PCMDecoder decoder = new PCMDecoder();
-            //List<byte> dec = decoder.DecodePCMData(app.graphics.GetItemdata(itemnum));
-            //System.IO.File.WriteAllBytes(chatgtp_fil, dec.ToArray());
 
             SOUND snd = new SOUND(app.graphics.GetItemdata(itemnum));
-            byte[] header = WAV.GetHeader(sND1.GetDecodedSampleSize(), 6000L, 8, 1, 1);
-            byte[] arr = snd.GetPCM4BitMono();
+            byte[] arr = snd.GetPCM8BitMono();
+            byte[] header = WAV.GetHeader(arr.Length, 6000L, 8, 1, 1);
+            
 
             //we need the header info also
             System.IO.File.WriteAllBytes(sfile, header.Join(arr));

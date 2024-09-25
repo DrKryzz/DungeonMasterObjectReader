@@ -80,7 +80,7 @@ Playback rate: 6000 Hz.
             itemdata = _itemdata;
         }
 
-        public byte[] GetPCM4BitMono()
+        public byte[] GetPCM8BitMono()
         {
             itemdata.Position = 0; //reset position
             List<byte> returns = new List<byte>();

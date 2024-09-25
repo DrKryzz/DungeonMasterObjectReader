@@ -85,7 +85,6 @@
     <Compile Include="Helpers\ICONDISPLAY.cs" />
     <Compile Include="Helpers\MyUt.cs" />
     <Compile Include="Helpers\PALETTE.cs" />
-    <Compile Include="Helpers\PCMDecoder.cs" />
     <Compile Include="Helpers\SOUND.cs" />
     <Compile Include="Helpers\Tmapfile.cs" />
     <Compile Include="Helpers\MyWordClrUt.cs" />
