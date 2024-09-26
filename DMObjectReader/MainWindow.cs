@@ -294,5 +294,36 @@ namespace DMObjectReader
             //    }
             //}
         }
+
+        public void ExportRAW_Click(object sender, EventArgs e)
+        {
+            int itemnum;
+
+            itemnum = ItemList.FocusedItem.Index;
+            string sfile;
+
+            using (SaveFileDialog dlg = new SaveFileDialog())
+            {
+                try
+                {
+                    dlg.Title = "Export RAW";
+                    dlg.OverwritePrompt = true;
+                    dlg.Filter = "*.dat|*.dat|All Files (*.*)|*.*";
+                    dlg.FileName = App.ZeroStr(itemnum, 4) + " " + app.mapfile.getname(itemnum) + ".dat";
+                    if (dlg.ShowDialog() != DialogResult.OK) throw new Exception();
+                    if (string.IsNullOrEmpty(dlg.FileName))
+                    {
+                        return;
+                    }
+                    sfile = dlg.FileName;
+
+                    app.graphics.gexport_raw(itemnum, sfile);
+                }
+                catch
+                {
+                    // Handle cancellation or error
+                }
+            }
+        }
     }
 }

@@ -544,6 +544,7 @@ namespace DMObjectReader
             this.ExportRAW.Name = "ExportRAW";
             this.ExportRAW.Size = new System.Drawing.Size(180, 22);
             this.ExportRAW.Text = "Export as RAW...";
+            this.ExportRAW.Click += new System.EventHandler(this.ExportRAW_Click);
             // 
             // ImportRAW
             // 
