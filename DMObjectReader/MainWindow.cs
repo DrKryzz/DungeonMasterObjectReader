@@ -236,8 +236,7 @@ namespace DMObjectReader
 
             itemnum = ItemList.FocusedItem.Index;
             string sfile = "";
-            string chatgtp_fil = "";
-            string sck_fil = "";
+            //string sck_fil = "";
             using (SaveFileDialog dlg = new SaveFileDialog())
             {
                 dlg.Title = "Export SND";
@@ -258,8 +257,7 @@ namespace DMObjectReader
                         return;
                     }
                     sfile = dlg.FileName;
-                    chatgtp_fil = dlg.FileName + "_chatgtp.wav";
-                    sck_fil = dlg.FileName + "_sck.wav";
+                    //sck_fil = dlg.FileName + "_sck.wav";
                 }
                 catch (Exception ex)
                 {
@@ -269,11 +267,12 @@ namespace DMObjectReader
             }
 
 
-            DataSND1 sND1 = new DataSND1(new MapItem() { }, 1);
-            sND1.Decode(app.graphics.GetItemdata(itemnum).ToArray());
-            sND1.ToWAV(new FileInfo(sck_fil));
+            ////SCK stuff
+            //DataSND1 sND1 = new DataSND1(new MapItem() { }, 1);
+            //sND1.Decode(app.graphics.GetItemdata(itemnum).ToArray());
+            //sND1.ToWAV(new FileInfo(sck_fil));
 
-
+            //my stuff
             SOUND snd = new SOUND(app.graphics.GetItemdata(itemnum));
             byte[] arr = snd.GetPCM8BitMono();
             byte[] header = WAV.GetHeader(arr.Length, 6000L, 8, 1, 1);
@@ -281,6 +280,19 @@ namespace DMObjectReader
 
             //we need the header info also
             System.IO.File.WriteAllBytes(sfile, header.Join(arr));
+
+
+            //check for likeness
+            //byte[] decode_arr = sND1.GetDecodedByteArray();
+
+            //int lowest_length = arr.Length <= decode_arr.Length ? arr.Length : decode_arr.Length;
+            //for(int i = 0; i < lowest_length; i++)
+            //{
+            //    if(arr[i] != decode_arr[i])
+            //    {
+            //        Console.WriteLine($"Difference {arr[i]} != {decode_arr[i]} on index {i}");
+            //    }
+            //}
         }
     }
 }

@@ -87,9 +87,9 @@ Playback rate: 6000 Hz.
             word_header_nrOfSamples = (short)ReadBigEndianWord(itemdata);
             Queue<byte> nibblesQueu = new Queue<byte>();
             byte previousNibble = 0;
-
+            int i = 0;
             //for each sample in the sound
-            for(int i = 0; i < word_header_nrOfSamples; i++)
+            for (i = 0; i < word_header_nrOfSamples;) //only add to i if we add an actual sample
             {
                 //read nibbles, we always get two nibbles at a time
 
@@ -109,6 +109,7 @@ Playback rate: 6000 Hz.
                 {
                     //add sample to byte array
                     returns.Add((byte)((nibbleToHandle * 17) & 0xF0)); //make it 8 bit mono instead of 4, mask high bits
+                    i++;
                     previousNibble = (byte)((nibbleToHandle * 17) & 0xF0); //make it 8 bit mono instead of 4, mask high bits
                 }
                 else //Nibble = 0
