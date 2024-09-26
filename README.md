@@ -4,9 +4,11 @@ Based of ADGE and in some part SCK
 SCK -> http://dmweb.free.fr/?q=node/884
 
 
-DONE: Loading and display of Graphics.dat file
-
-DONE: Possible to extract Image1 files as BMP, Possible to extract Sound as SND1
+DONE: 
+* Loading and display of Graphics.dat file
+* Possible to extract Image1 files as BMP
+* Possible to extract SND1 files as WAV
+* Possible to extract RAW as DAT
 
 TODO: Lots
 
