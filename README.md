@@ -6,8 +6,8 @@ SCK -> http://dmweb.free.fr/?q=node/884
 
 DONE: Loading and display of Graphics.dat file
 
-DONE: Possible to extract Image1 files as BMP
+DONE: Possible to extract Image1 files as BMP, Possible to extract Sound as SND1
 
 TODO: Lots
 
-Prio Exporting SND1 files
+Fixing the GUI for the rest of ADGE
