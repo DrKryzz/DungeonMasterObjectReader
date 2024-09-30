@@ -9,6 +9,7 @@ DONE:
 * Possible to extract Image1 files as BMP
 * Possible to extract SND1 files as WAV
 * Possible to extract RAW as DAT
+* Minor doc about the compression algortihm
 
 TODO: Lots
 
