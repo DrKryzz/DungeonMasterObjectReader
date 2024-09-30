@@ -492,7 +492,7 @@ namespace DMObjectReader
                         d++;
                         if (BitsInCode < 12)
                         {
-                            if (d == Math.Pow(2, BitsInCode))   // If there are not anymore enough bits in a code to store the code's value
+                            if (d == Math.Pow(2, BitsInCode))   // If there are not anymore enough bits in a code to store the code's value d == 2^BitsInCode
                             {
                                 BitsInCode++;     // Add a bit to the code length
                             }

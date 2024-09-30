@@ -147,6 +147,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TechnicalDocuments\Compression_LZW.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
