@@ -1,5 +1,5 @@
 # DungeonMasterObjectReader
-Based of ADGE and in some part SCK
+Based of ADGE and SCK
 <br>ADGE -> http://dmweb.free.fr/?q=node/1403</br>
 SCK -> http://dmweb.free.fr/?q=node/884
 
