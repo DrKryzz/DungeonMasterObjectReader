@@ -325,5 +325,82 @@ namespace DMObjectReader
                 }
             }
         }
+
+        public void ImportRAW_Click(object sender, EventArgs e)
+        {
+            int itemnum;
+            itemnum = ItemList.FocusedItem.Index;
+            string sfile;
+
+            OpenFileDialog dlg = new OpenFileDialog();
+            try
+            {
+                dlg.Title = "Import RAW";
+                dlg.Filter = "*.dat|*.dat|All Files (*.*)|*.*||";
+                dlg.FileName = $"{App.ZeroStr(itemnum, 4)} {app.mapfile.getname(itemnum)}.dat";
+                if (dlg.ShowDialog() != DialogResult.OK) throw new Exception();
+                if (string.IsNullOrEmpty(dlg.FileName))
+                {
+                    return;
+                }
+                sfile = dlg.FileName;
+            }
+            catch
+            {
+                return;
+            }
+
+            MemoryStream newstr = new MemoryStream();
+            int newlen;
+            string newtype;
+
+            newlen = app.graphics.import_raw(ref newstr, sfile);
+
+            newtype = app.mapfile.gettyperenamed(itemnum);
+            app.graphics.setgitemdata(itemnum, newstr);
+
+            app.graphics.setgitemsize(itemnum, newlen);
+            if (newtype == "IMG1")
+            {
+                app.graphics.buildbmp(itemnum);
+            }
+
+            if (itemnum == 556)
+            {
+                app.graphics.f556.itemdata = newstr;
+                app.graphics.f556.itemlen = (short)newlen;
+                app.graphics.f556.read();
+            }
+            else if (itemnum == 558)
+            {
+                app.graphics.f558.itemdata = newstr;
+                app.graphics.f558.itemloc = 0;
+                app.graphics.f558.read();
+            }
+            else if (itemnum == 559)
+            {
+                app.graphics.f559.itemdata = newstr;
+                app.graphics.f559.itemloc = 0;
+                app.graphics.f559.read();
+            }
+            else if (itemnum == 560)
+            {
+                app.graphics.f560.itemdata = newstr;
+                app.graphics.f560.itemloc = 0;
+                app.graphics.f560.read();
+            }
+            else if (itemnum == 561)
+            {
+                app.graphics.f561.itemdata = newstr;
+                app.graphics.f561.itemloc = 0;
+                app.graphics.f561.read();
+            }
+            else if (itemnum == 562)
+            {
+                app.graphics.f562.itemdata = newstr;
+                app.graphics.f562.read();
+            }   
+
+        }
     }
 }

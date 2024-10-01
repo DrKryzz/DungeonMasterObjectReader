@@ -551,6 +551,7 @@ namespace DMObjectReader
             this.ImportRAW.Name = "ImportRAW";
             this.ImportRAW.Size = new System.Drawing.Size(180, 22);
             this.ImportRAW.Text = "Import RAW data...";
+            this.ImportRAW.Click += new System.EventHandler(this.ImportRAW_Click);
             // 
             // ViewasRAW
             // 
