@@ -10,6 +10,7 @@ DONE:
 * Possible to extract SND1 files as WAV
 * Possible to extract RAW as DAT
 * Minor doc about the compression algortihm
+* Added import raw
 
 TODO: Lots
 
