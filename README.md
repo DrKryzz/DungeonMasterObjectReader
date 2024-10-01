@@ -1,5 +1,5 @@
 # DungeonMasterObjectReader
-Based of ADGE and in some part SCK
+Based of ADGE and SCK
 <br>ADGE -> http://dmweb.free.fr/?q=node/1403</br>
 SCK -> http://dmweb.free.fr/?q=node/884
 
@@ -9,6 +9,7 @@ DONE:
 * Possible to extract Image1 files as BMP
 * Possible to extract SND1 files as WAV
 * Possible to extract RAW as DAT
+* Minor doc about the compression algortihm
 
 TODO: Lots
 
