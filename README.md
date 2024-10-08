@@ -15,3 +15,4 @@ DONE:
 TODO: Lots
 
 Fixing the GUI for the rest of ADGE
+* Fixing the HexEditor
