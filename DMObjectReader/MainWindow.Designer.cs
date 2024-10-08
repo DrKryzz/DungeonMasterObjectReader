@@ -558,6 +558,7 @@ namespace DMObjectReader
             this.ViewasRAW.Name = "ViewasRAW";
             this.ViewasRAW.Size = new System.Drawing.Size(180, 22);
             this.ViewasRAW.Text = "View as RAW...";
+            this.ViewasRAW.Click += new System.EventHandler(this.ViewasRAW_Click);
             // 
             // ToolStripSeparator1
             // 

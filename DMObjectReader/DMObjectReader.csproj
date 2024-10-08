@@ -111,6 +111,12 @@
     <Compile Include="CodeIdid\Utils.cs" />
     <Compile Include="Helpers\RectPos.cs" />
     <Compile Include="Tgraphics.cs" />
+    <Compile Include="Windows\HexEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\HexEditor.Designer.cs">
+      <DependentUpon>HexEditor.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CodeIdid\OldMainWindows.resx">
       <DependentUpon>OldMainWindows.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +135,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Windows\HexEditor.resx">
+      <DependentUpon>HexEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Data\ADGE_file558_uncompressed.dat" />
     <None Include="Data\ADGE_file559_uncompressed.dat" />
     <None Include="Data\ADGE_file561_uncompressed.dat" />

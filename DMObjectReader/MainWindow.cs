@@ -1,4 +1,5 @@
 ﻿using DMObjectReader.Helpers;
+using DMObjectReader.Windows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -401,6 +402,17 @@ namespace DMObjectReader
                 app.graphics.f562.read();
             }   
 
+        }
+
+        private void ViewasRAW_Click(object sender, EventArgs e)
+        {
+            int itemnum;
+            HexEditor dlg_hexeditor;
+            itemnum = ItemList.FocusedItem.Index;
+            dlg_hexeditor = new HexEditor(app);
+            dlg_hexeditor.itemnum = (short)itemnum;
+            dlg_hexeditor.init();
+            dlg_hexeditor.Show();
         }
     }
 }
