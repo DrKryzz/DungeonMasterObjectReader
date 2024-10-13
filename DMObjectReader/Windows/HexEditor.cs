@@ -39,7 +39,7 @@ namespace DMObjectReader.Windows
         {
             int i;
             string s = "";
-            int masked;
+            int masked; //could also be ushort
             byte data;
 
             masked = 65536; // the int variable type is 16-bits in your chosen compiler which gives it a range of -32768 to 32767, or 0 to 65535 if unsigned.
@@ -100,6 +100,59 @@ namespace DMObjectReader.Windows
             }
 
             app.graphics.gexport_raw(itemnum, sfile);
+        }
+
+        private void btn_Import_Click(object sender, EventArgs e)
+        {
+
+            string f;
+            string sfile;
+
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                try
+                {
+                    dlg.Title = "Import";
+                    dlg.Filter = "*.dat|*.dat|All Files (*.*)|*.*||";
+
+                    dlg.FileName = $"{App.ZeroStr(itemnum, 4)} {app.mapfile.getname(itemnum)}.dat";
+
+                    if (dlg.ShowDialog() != DialogResult.OK) return;
+
+                    if (new DirectoryInfo(dlg.FileName).Name.Length == 0)
+                    {
+                        return;
+                    }
+
+                    f = Path.GetFileName(dlg.FileName);
+                    sfile = dlg.FileName;
+
+                    itemlen = app.graphics.import_raw(ref itemdata, sfile);
+                }
+                catch
+                {
+                    // Handle the error as needed
+                }
+            }
+
+            InitContents();
+        }
+
+        private void btn_Ok_Click(object sender, EventArgs e)
+        {
+
+            string newtype;
+
+            app.graphics.setgitemdata(itemnum, itemdata);
+            app.graphics.setgitemsize(itemnum, itemlen);
+
+            newtype = app.mapfile.gettyperenamed(itemnum);
+            if (newtype == "IMG1")
+            {
+                app.graphics.buildbmp(itemnum);
+            }
+
+            this.Close();
         }
     }
 }

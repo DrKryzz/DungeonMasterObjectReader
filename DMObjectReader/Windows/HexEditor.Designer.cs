@@ -60,6 +60,7 @@ namespace DMObjectReader.Windows
             this.btn_Ok.Size = new System.Drawing.Size(89, 27);
             this.btn_Ok.TabIndex = 6;
             this.btn_Ok.Text = "Ok";
+            this.btn_Ok.Click += new System.EventHandler(this.btn_Ok_Click);
             // 
             // btn_Import
             // 
@@ -68,6 +69,7 @@ namespace DMObjectReader.Windows
             this.btn_Import.Size = new System.Drawing.Size(89, 27);
             this.btn_Import.TabIndex = 7;
             this.btn_Import.Text = "&Import";
+            this.btn_Import.Click += new System.EventHandler(this.btn_Import_Click);
             // 
             // btn_Export
             // 
