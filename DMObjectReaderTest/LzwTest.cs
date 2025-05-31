@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DMObjectReader.AI_Code;
 
-namespace DMObjectReader.AI_Code
+namespace DMObjectReaderTest
 {
     [TestClass]
-    public static class LZWTest
+    public sealed class LzwTest
     {
-        public static void Run()
+        [TestMethod]
+        public void TestMethod1()
         {
             string original = "ABABABAABABABAABABABAABABABAABABABAABABABAABABABAABABABAABABABA";
             Console.WriteLine("Original text:");
@@ -26,7 +23,8 @@ namespace DMObjectReader.AI_Code
             Console.WriteLine(decompressed);
 
             Console.WriteLine("Match: " + (original == decompressed));
+
+            Assert.AreEqual(original, decompressed, "Decompressed text does not match original text.");
         }
     }
-
 }

@@ -1,4 +1,4 @@
-﻿namespace DMObjectReaderTest
+﻿namespace DMObjectReaderTest4
 {
     [TestClass]
     public sealed class Test1

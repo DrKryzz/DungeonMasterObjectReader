@@ -6,6 +6,17 @@ using System.Threading.Tasks;
 
 namespace DMObjectReader.AI_Code
 {
+    /*
+ Är detta standard-LZW?
+Nej. Det är en modifierad LZW:
+
+Funktion	Standard LZW	Din kod
+Kodlängd ökar från 9 till 12 bitar	✅	✅
+Flush-dictionary kod (256)	❌ (GIF-only)	✅
+0x90 escape-byte hantering	❌	✅
+Inläsning via bitbuffert	✅	✅
+Output till string via ordbok	✅	✅
+ */
     public class LZWCompressor
     {
         private Dictionary<string, int> dict;
