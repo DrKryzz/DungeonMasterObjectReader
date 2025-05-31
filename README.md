@@ -11,8 +11,21 @@ DONE:
 * Possible to extract RAW as DAT
 * Minor doc about the compression algortihm
 * Added import raw
+* Fixing the HexEditor
 
 TODO: Lots
 
 Fixing the GUI for the rest of ADGE
-* Fixing the HexEditor
+* Editors
+*   Item types
+*   Objects
+*   Attacks
+*   Combos
+*   Monsters
+*   Monster Drops
+*   Doors
+*   Spells
+*   Runes
+*   Palette modifier...
+*   Ingame Palette .. main
+*   Ingame Palette .. sub
