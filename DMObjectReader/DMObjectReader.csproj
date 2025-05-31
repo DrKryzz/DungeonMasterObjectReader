@@ -47,6 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI-Code\LZWTest.cs" />
+    <Compile Include="AI-Code\LZWUncompressor.cs" />
+    <Compile Include="AI-Code\LZWCompressor.cs" />
+    <Compile Include="AI-Code\LZWDecompressor.cs" />
     <Compile Include="App.cs" />
     <Compile Include="CodeIdid\OldMainWindows.cs">
       <SubType>Form</SubType>
