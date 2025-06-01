@@ -19,9 +19,9 @@ namespace DMObjectReader
         public string openfname;
         public MainWindow(App _app)
         {
-            app = _app;
+            
             InitializeComponent();
-
+            app = _app;
             //ADGE kör map read i Forms load, vi kör den här
             app.mapfile.Read();
         }
@@ -413,6 +413,12 @@ namespace DMObjectReader
             dlg_hexeditor.itemnum = (short)itemnum;
             dlg_hexeditor.init();
             dlg_hexeditor.Show();
+        }
+
+        private void ItemTypes_Click(object sender, EventArgs e)
+        {
+            app.dlg_itemtypeeditor.init();
+            app.dlg_itemtypeeditor.Show();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace DMObjectReader.DTOs
         public MemoryStream itemdata;
         public short itemlen;
         public short objs = 0;
-        private string[] objstrings = new string[201]; //orig 200
+        public string[] objstrings = new string[201]; //orig 200
         App app;
         public file556(App _app)
         {

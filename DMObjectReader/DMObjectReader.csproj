@@ -74,6 +74,12 @@
     <Compile Include="DTOs\spell.cs" />
     <Compile Include="DTOs\Tdoor.cs" />
     <Compile Include="DTOs\weapon.cs" />
+    <Compile Include="Editors\ItemTypeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\ItemTypeEditor.Designer.cs">
+      <DependentUpon>ItemTypeEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\Bytes.cs" />
     <Compile Include="Helpers\CSBinaryReader.cs" />
     <Compile Include="DTOs\file556.cs" />
@@ -122,6 +128,9 @@
     </Compile>
     <EmbeddedResource Include="CodeIdid\OldMainWindows.resx">
       <DependentUpon>OldMainWindows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\ItemTypeEditor.resx">
+      <DependentUpon>ItemTypeEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -176,5 +185,6 @@
     <Content Include="Data\_EyeOfTime.png" />
     <Content Include="Data\_Topaz.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using DMObjectReader.Helpers;
+﻿using DMObjectReader.Editors;
+using DMObjectReader.Helpers;
 using DMObjectReader.MiscClasses;
 using System;
 using System.Collections.Generic;
@@ -35,8 +36,10 @@ namespace DMObjectReader
 
         public ImageList JewelIL = new ImageList();
         private string[] CSBWinObjNames = new string[180];
-        /*TODO ADD ALL REFERENCES*/
 
+        //editors
+        public ItemTypeEditor dlg_itemtypeeditor; // = new ItemTypeEditor(this);
+        /*TODO ADD ALL REFERENCES*/
 
         public App()
         {
@@ -47,9 +50,14 @@ namespace DMObjectReader
             InitCSBWinObjNames();
             mapfile = new Tmapfile();
 
+            // Initialize editors before the main window is created
+            dlg_itemtypeeditor = new ItemTypeEditor(this);
+
             MainWindow window = new MainWindow(this);
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.Run(window);
+
+            
         }
 
         /*LOST OF CODE MISSING HERE NEED MORE LATER*/

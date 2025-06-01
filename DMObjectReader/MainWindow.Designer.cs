@@ -88,6 +88,7 @@ namespace DMObjectReader
             this.ContextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ExportIMG1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ExportRAW = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExportSND1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ImportRAW = new System.Windows.Forms.ToolStripMenuItem();
             this.ViewasRAW = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -97,7 +98,6 @@ namespace DMObjectReader
             this._StatusBar_Panel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this._StatusBar_Panel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.ExportSND1 = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu1.SuspendLayout();
             this.ContextMenuStrip1.SuspendLayout();
             this.StatusBar.SuspendLayout();
@@ -226,6 +226,7 @@ namespace DMObjectReader
             this.ItemTypes.Name = "ItemTypes";
             this.ItemTypes.Size = new System.Drawing.Size(318, 22);
             this.ItemTypes.Text = "&Item Types";
+            this.ItemTypes.Click += new System.EventHandler(this.ItemTypes_Click);
             // 
             // Objects
             // 
@@ -530,45 +531,52 @@ namespace DMObjectReader
             this.ToolStripSeparator1,
             this.HexEditToolStripMenuItem});
             this.ContextMenuStrip1.Name = "ContextMenuStrip1";
-            this.ContextMenuStrip1.Size = new System.Drawing.Size(181, 164);
+            this.ContextMenuStrip1.Size = new System.Drawing.Size(174, 142);
             // 
             // ExportIMG1
             // 
             this.ExportIMG1.Name = "ExportIMG1";
-            this.ExportIMG1.Size = new System.Drawing.Size(180, 22);
+            this.ExportIMG1.Size = new System.Drawing.Size(173, 22);
             this.ExportIMG1.Text = "Export as IMG1...";
             this.ExportIMG1.Click += new System.EventHandler(this.ExportIMG1_Click);
             // 
             // ExportRAW
             // 
             this.ExportRAW.Name = "ExportRAW";
-            this.ExportRAW.Size = new System.Drawing.Size(180, 22);
+            this.ExportRAW.Size = new System.Drawing.Size(173, 22);
             this.ExportRAW.Text = "Export as RAW...";
             this.ExportRAW.Click += new System.EventHandler(this.ExportRAW_Click);
+            // 
+            // ExportSND1
+            // 
+            this.ExportSND1.Name = "ExportSND1";
+            this.ExportSND1.Size = new System.Drawing.Size(173, 22);
+            this.ExportSND1.Text = "Export as SND1";
+            this.ExportSND1.Click += new System.EventHandler(this.ExportSND1_Click);
             // 
             // ImportRAW
             // 
             this.ImportRAW.Name = "ImportRAW";
-            this.ImportRAW.Size = new System.Drawing.Size(180, 22);
+            this.ImportRAW.Size = new System.Drawing.Size(173, 22);
             this.ImportRAW.Text = "Import RAW data...";
             this.ImportRAW.Click += new System.EventHandler(this.ImportRAW_Click);
             // 
             // ViewasRAW
             // 
             this.ViewasRAW.Name = "ViewasRAW";
-            this.ViewasRAW.Size = new System.Drawing.Size(180, 22);
+            this.ViewasRAW.Size = new System.Drawing.Size(173, 22);
             this.ViewasRAW.Text = "View as RAW...";
             this.ViewasRAW.Click += new System.EventHandler(this.ViewasRAW_Click);
             // 
             // ToolStripSeparator1
             // 
             this.ToolStripSeparator1.Name = "ToolStripSeparator1";
-            this.ToolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.ToolStripSeparator1.Size = new System.Drawing.Size(170, 6);
             // 
             // HexEditToolStripMenuItem
             // 
             this.HexEditToolStripMenuItem.Name = "HexEditToolStripMenuItem";
-            this.HexEditToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.HexEditToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.HexEditToolStripMenuItem.Text = "&Hex Edit";
             // 
             // StatusBar
@@ -599,13 +607,6 @@ namespace DMObjectReader
             this._StatusBar_Panel4.Name = "_StatusBar_Panel4";
             this._StatusBar_Panel4.Size = new System.Drawing.Size(16, 17);
             this._StatusBar_Panel4.Text = "   ";
-            // 
-            // ExportSND1
-            // 
-            this.ExportSND1.Name = "ExportSND1";
-            this.ExportSND1.Size = new System.Drawing.Size(180, 22);
-            this.ExportSND1.Text = "Export as SND1";
-            this.ExportSND1.Click += new System.EventHandler(this.ExportSND1_Click);
             // 
             // MainWindow
             // 

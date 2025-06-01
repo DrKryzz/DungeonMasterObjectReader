@@ -6,7 +6,7 @@ namespace DMObjectReaderTest
     public sealed class LzwTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestAICompressDecompress()
         {
             string original = "ABABABAABABABAABABABAABABABAABABABAABABABAABABABAABABABAABABABA";
             Console.WriteLine("Original text:");
@@ -26,5 +26,6 @@ namespace DMObjectReaderTest
 
             Assert.AreEqual(original, decompressed, "Decompressed text does not match original text.");
         }
+
     }
 }
