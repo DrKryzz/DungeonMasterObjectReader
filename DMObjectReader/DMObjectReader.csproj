@@ -150,6 +150,9 @@
     <EmbeddedResource Include="Windows\HexEditor.resx">
       <DependentUpon>HexEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\README.md">
+      <Link>README.md</Link>
+    </None>
     <None Include="Data\ADGE_file558_uncompressed.dat" />
     <None Include="Data\ADGE_file559_uncompressed.dat" />
     <None Include="Data\ADGE_file561_uncompressed.dat" />

@@ -17,7 +17,7 @@ TODO: Lots
 
 Fixing the GUI for the rest of ADGE
 * Editors
-*   Item types
+*   Item types - Started
 *   Objects
 *   Attacks
 *   Combos
