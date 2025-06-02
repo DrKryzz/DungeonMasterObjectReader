@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,7 @@ namespace DMObjectReader.DTOs
         public int word8892;
         private armor[] armors = ArrayUt<armor>.NewArray1(58);
         private weapon[] weapons = ArrayUt<weapon>.NewArray1(46);
-        private obj[] objs = ArrayUt<obj>.NewArray1(180);
+        public obj[] objs = ArrayUt<obj>.NewArray1(180);
         private byte[] bytes7302 = new byte[17]; //orig 16
         private byte[] dbentrysizes = new byte[17]; //orig 16
         private int[] deltaxs = new int[5]; //orig 4

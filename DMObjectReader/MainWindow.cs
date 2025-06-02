@@ -417,6 +417,7 @@ namespace DMObjectReader
 
         private void ItemTypes_Click(object sender, EventArgs e)
         {
+            app.dlg_itemtypeeditor = new Editors.ItemTypeEditor(app);
             app.dlg_itemtypeeditor.init();
             app.dlg_itemtypeeditor.Show();
         }

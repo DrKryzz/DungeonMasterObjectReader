@@ -16,12 +16,59 @@ namespace DMObjectReader.Editors
         public short selecteditem;
         private string[] objstrings; // = new string[200]; //orig 200 but f556.objstrings.Length is 201
         App App;
+        Panel SelectBox;
         public ItemTypeEditor(App _app)
         {
 
             InitializeComponent();
             App = _app;
             objstrings = new string[App.graphics.f556.objstrings.Length];
+
+            // SelectBox som en Panel
+            SelectBox = new Panel
+            {
+                Location = new Point(0, 0),
+                Name = "SelectBox",
+                Size = new Size(32, 32),
+                BackColor = Color.Transparent // simulera transparent bakgrund
+            };
+
+            // Rita cyan border med Paint
+            SelectBox.Paint += (sender, e) =>
+            {
+                int borderWidth = 2;
+                Color borderColor = Color.Cyan;
+
+                using (Pen pen = new Pen(borderColor, borderWidth))
+                {
+                    e.Graphics.DrawRectangle(pen,
+                        borderWidth / 2,
+                        borderWidth / 2,
+                        SelectBox.Width - borderWidth,
+                        SelectBox.Height - borderWidth);
+                }
+            };
+
+            // Lägg till Panelen i formuläret
+            this.Graphic.Controls.Add(SelectBox);
+
+            //rita ut bakgrundsbilden
+            Bitmap offscreen = new Bitmap(Graphic.ClientSize.Width, Graphic.ClientSize.Height);
+            using (Graphics cv = Graphics.FromImage(offscreen))
+            {
+                App.graphics.stretchbmpby(cv, 42, 0, 0, 0, 0, 200, 200);
+                App.graphics.stretchbmpby(cv, 43, 0, 64, 0, 0, 200, 200);
+                App.graphics.stretchbmpby(cv, 44, 0, 128, 0, 0, 200, 200);
+                App.graphics.stretchbmpby(cv, 45, 0, 192, 0, 0, 200, 200);
+                App.graphics.stretchbmpby(cv, 46, 0, 256, 0, 0, 200, 200);
+                App.graphics.stretchbmpby(cv, 47, 0, 320, 0, 0, 200, 200);
+                App.graphics.stretchbmpby(cv, 48, 0, 384, 0, 0, 200, 200);
+            }
+
+            Graphic.BackgroundImage = offscreen;
+            Graphic.BackgroundImageLayout = ImageLayout.None;
+
+
         }
 
         public void init()
@@ -31,7 +78,46 @@ namespace DMObjectReader.Editors
             {
                 objstrings[i] = App.graphics.f556.objstrings[i];
             }
-            
+
+            SelectItem(0);
         }
+
+        void SelectItem(short num)
+        {
+            short X;
+            short Y;
+
+            selecteditem = (short)(num + 1);
+
+            // Maskera de 4 lägsta bitarna (X-position)
+            X = (short)(num & 0xF);
+            // Beräkna Y-position
+            Y = (short)((num - X) / 16);
+
+            SelectBox.Left = X * 32;
+            SelectBox.Top = Y * 32;
+
+            ItemName.Text = objstrings[num + 1];
+            ItemName.SelectionStart = 0;
+            ItemName.SelectionLength = ItemName.Text.Length;
+            //ItemName.Focus();  // (kommenterad)
+
+            short i;
+            short j = 0;
+            ItemList.Items.Clear();
+
+            for (i = 1; i <= 180; i++)
+            {
+                if (App.graphics.f559.objs[i].ItemType == num)
+                {
+                    var item = ItemList.Items.Add(App.ZeroStr(i, 2));
+                    item.SubItems.Add(objstrings[num + 1]);
+                    j++;
+                }
+            }
+
+            //ItemName.Focus();  // (kommenterad)
+        }
+
     }
 }

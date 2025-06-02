@@ -51,7 +51,8 @@ namespace DMObjectReader
             mapfile = new Tmapfile();
 
             // Initialize editors before the main window is created
-            dlg_itemtypeeditor = new ItemTypeEditor(this);
+            // Initialize when called otherwise it will be null
+            //dlg_itemtypeeditor = new ItemTypeEditor(this);
 
             MainWindow window = new MainWindow(this);
             System.Windows.Forms.Application.EnableVisualStyles();

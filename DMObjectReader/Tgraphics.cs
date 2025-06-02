@@ -1548,7 +1548,7 @@ namespace DMObjectReader
             pixelarray = new byte[pwidth * pheight + 16]; //16 bytes buffer in case of overflow
             mirroredpixelarray = new byte[pwidth * pheight + 16]; //16 bytes buffer in case of overflow
 
-            j = 1;
+            j = 0; // original j=1 but c# indexes from 0
             for (i = 5; i <= itemlen; i++)
             {
                 b = sread_byte(gitemdatas[itemnum], i);
