@@ -112,7 +112,7 @@ namespace DMObjectReader.Editors
             short j = 0;
             ItemList.Items.Clear();
 
-            for (i = 1; i <= 180; i++)
+            for (i = 1; i < App.graphics.f559.objs.Length; i++) //original i <= 180
             {
                 if (App.graphics.f559.objs[i].ItemType == num)
                 {
