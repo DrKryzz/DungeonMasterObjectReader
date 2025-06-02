@@ -153,6 +153,7 @@
     <None Include="..\README.md">
       <Link>README.md</Link>
     </None>
+    <None Include="Data\ADGE_file556_uncompressed.dat" />
     <None Include="Data\ADGE_file558_uncompressed.dat" />
     <None Include="Data\ADGE_file559_uncompressed.dat" />
     <None Include="Data\ADGE_file561_uncompressed.dat" />
@@ -160,7 +161,6 @@
     <None Include="Data\dm.map">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Data\file556_uncompressed.dat" />
     <None Include="Data\graphics.dat" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
