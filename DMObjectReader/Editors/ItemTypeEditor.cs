@@ -53,6 +53,7 @@ namespace DMObjectReader.Editors
             this.Graphic.Controls.Add(SelectBox);
 
             //rita ut bakgrundsbilden
+            App.graphics.curPalette = (App.graphics.gPALETTE_MAIN);
             Bitmap offscreen = new Bitmap(Graphic.ClientSize.Width, Graphic.ClientSize.Height);
             using (Graphics cv = Graphics.FromImage(offscreen))
             {
@@ -80,6 +81,11 @@ namespace DMObjectReader.Editors
             }
 
             SelectItem(0);
+        }
+
+        void SelectItem(int num)
+        {
+            SelectItem((short)num);
         }
 
         void SelectItem(short num)
@@ -119,5 +125,31 @@ namespace DMObjectReader.Editors
             //ItemName.Focus();  // (kommenterad)
         }
 
+        private void Graphic_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                int x = e.X;
+                int y = e.Y;
+
+                // Snap to 32x32 grid
+                int cx = x - (x % 32);
+                int cy = y - (y % 32);
+
+                // Convert to tile index
+                int col = cx / 32;
+                int row = cy / 32;
+
+                int itemnum = col + (row * 16);
+
+                if (itemnum < 201)
+                {
+                    SelectItem(itemnum);
+                }
+
+                // För debugging (om du vill):
+                // MessageBox.Show($"MouseDown on itemnum: {itemnum}");
+            }
+        }
     }
 }

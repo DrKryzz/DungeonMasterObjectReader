@@ -91,6 +91,7 @@
             this.Graphic.Size = new System.Drawing.Size(516, 489);
             this.Graphic.TabIndex = 13;
             this.Graphic.TabStop = true;
+            this.Graphic.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Graphic_MouseClick);
             // 
             // _ST_1
             // 
