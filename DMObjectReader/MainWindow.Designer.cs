@@ -234,6 +234,7 @@ namespace DMObjectReader
             this.Objects.Name = "Objects";
             this.Objects.Size = new System.Drawing.Size(318, 22);
             this.Objects.Text = "&Objects";
+            this.Objects.Click += new System.EventHandler(this.Objects_Click);
             // 
             // Attacks
             // 

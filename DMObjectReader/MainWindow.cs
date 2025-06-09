@@ -421,5 +421,12 @@ namespace DMObjectReader
             app.dlg_itemtypeeditor.init();
             app.dlg_itemtypeeditor.Show();
         }
+
+        private void Objects_Click(object sender, EventArgs e)
+        {
+            app.dlg_objectlist = new Editors.ObjectListForm(app);
+            app.dlg_objectlist.init();
+            app.dlg_objectlist.Show();
+        }
     }
 }

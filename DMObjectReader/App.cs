@@ -39,6 +39,7 @@ namespace DMObjectReader
 
         //editors
         public ItemTypeEditor dlg_itemtypeeditor; // = new ItemTypeEditor(this);
+        public ObjectListForm dlg_objectlist; // = new ObjectListForm(this);
         /*TODO ADD ALL REFERENCES*/
 
         public App()
