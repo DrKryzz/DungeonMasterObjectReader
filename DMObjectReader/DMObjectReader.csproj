@@ -74,17 +74,41 @@
     <Compile Include="DTOs\spell.cs" />
     <Compile Include="DTOs\Tdoor.cs" />
     <Compile Include="DTOs\weapon.cs" />
+    <Compile Include="Editors\ArmorEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\ArmorEditor.Designer.cs">
+      <DependentUpon>ArmorEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\FoodEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\FoodEditor.Designer.cs">
+      <DependentUpon>FoodEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editors\ItemTypeEditor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Editors\ItemTypeEditor.Designer.cs">
       <DependentUpon>ItemTypeEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editors\MiscObjectEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\MiscObjectEditor.Designer.cs">
+      <DependentUpon>MiscObjectEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editors\ObjectListForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Editors\ObjectListForm.Designer.cs">
       <DependentUpon>ObjectListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\WeaponEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\WeaponEditor.Designer.cs">
+      <DependentUpon>WeaponEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Bytes.cs" />
     <Compile Include="Helpers\CSBinaryReader.cs" />
@@ -111,6 +135,9 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="MiscClasses\BaseTypeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MiscClasses\BITMAPINFOHEADER.cs" />
     <Compile Include="MiscClasses\BITMAPINFO_256.cs" />
     <Compile Include="MiscClasses\RGBQUAD.cs" />
@@ -135,11 +162,23 @@
     <EmbeddedResource Include="CodeIdid\OldMainWindows.resx">
       <DependentUpon>OldMainWindows.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editors\ArmorEditor.resx">
+      <DependentUpon>ArmorEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\FoodEditor.resx">
+      <DependentUpon>FoodEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editors\ItemTypeEditor.resx">
       <DependentUpon>ItemTypeEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editors\MiscObjectEditor.resx">
+      <DependentUpon>MiscObjectEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editors\ObjectListForm.resx">
       <DependentUpon>ObjectListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\WeaponEditor.resx">
+      <DependentUpon>WeaponEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

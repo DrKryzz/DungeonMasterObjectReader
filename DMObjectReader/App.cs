@@ -818,6 +818,11 @@ namespace DMObjectReader
             }
             return zerohex;
         }
+
+        internal void MsgBox(string message)
+        {
+            MessageBox.Show(message, "DMObjectReader", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }//end of class
 
     public static class ArrayExtender

@@ -58,6 +58,7 @@
             this.ObjectList.TabIndex = 5;
             this.ObjectList.UseCompatibleStateImageBehavior = false;
             this.ObjectList.View = System.Windows.Forms.View.Details;
+            this.ObjectList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ObjectList_Renamed_DblClick);
             // 
             // ColumnHeader1
             // 

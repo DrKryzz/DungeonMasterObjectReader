@@ -28,6 +28,11 @@ namespace DMObjectReader.DTOs
         {
             objstrings[num] = s;
         } //End Sub
+
+        public string objtype(int num)
+        {
+            return objtype((short)num);
+        }
         public string objtype(short num)
         {
             short ItemType;
